@@ -15,7 +15,7 @@ public class Start {
 			System.out.println("Press 1 to add student");
 			System.out.println("Press 2 to delete student");
 			System.out.println("Press 3 to display student");
-			System.out.println("Press 4 to exit app");
+			System.out.println("Press 4 to update student");
 			int c = Integer.parseInt(br.readLine());
 			
 			if(c == 1)
@@ -56,13 +56,13 @@ public class Start {
 				StudentDao.showAllData();
 			}else if(c==4)
 			{
-				System.out.println("Enter Student ID to delete:");
-				int userId=Integer.parseInt(br.readLine());
-				boolean f=StudentDao.updateStudent(userId);
-				if (f) {
-					System.out.println("Data deleted...");
-				}else {
-					System.out.println("Something went wrong....");
+				boolean a=StudentDao.updateStudent();
+				if(a)
+				{
+					System.out.println("Updated successfully...");
+				}else
+				{
+					System.out.println("Something went wrong try again");
 				}
 			}else
 			{
